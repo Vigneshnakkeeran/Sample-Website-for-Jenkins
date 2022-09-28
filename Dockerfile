@@ -1,8 +1,8 @@
 # Pull base image 
-From tomcat:8-jre8 
+From tomcat:9-jre9 
 
 # Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
+MAINTAINER "vigneshnakkeeran01@gmail.com" 
 COPY ./webapp.war /var/lib/jenkins/workspace/deploy/webapp/target
 
 
