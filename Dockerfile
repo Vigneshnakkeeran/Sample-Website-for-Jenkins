@@ -3,6 +3,6 @@ From tomcat:9-jre9
 
 # Maintainer 
 MAINTAINER "vigneshnakkeeran01@gmail.com" 
-COPY target/webapp.war /usr/local/tomcat/webapps
+COPY webapp/target/webapp*.war  /usr/local/tomcat/webapps
 
 
