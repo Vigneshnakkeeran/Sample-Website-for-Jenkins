@@ -1,8 +1,6 @@
 version: 0.2
 phases:
   install:
-    runtime-versions:
-      java: openjdk8
     commands:
       - echo Entered the install phase...
       - apt-get install openjdk-8-jdk -y
