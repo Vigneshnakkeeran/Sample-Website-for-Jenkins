@@ -1,28 +1,12 @@
 version: 0.2
 phases:
-  install:
-    runtime-versions:
-       java: corretto17
-    commands:
-      - echo Entered the install phase...
-      - apt-get update -y
-      - wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
-      - tar xzf apache-maven-3.5.4-bin.tar.gz
-      - ln -s apache-maven-3.5.4 maven
-      - apt-get update -y
-    finally:
-      - echo This always runs even if the update or install command fails  
   build:
     commands:
-      - echo Entered the build phase...
-      - echo Build started 
-      - mvn package -Dmaven.test.failure.ignore=true
-    finally:
-      - echo This always runs even if the install command fails
+      - echo Build started on '9-10-2022'
+      - mvn clean install package
   post_build:
     commands:
-      - echo Entered the post_build phase...
-      - echo Build completed 
+      - echo Build completed Successfully
 artifacts:
   files:
     - target/webapp.war
