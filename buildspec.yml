@@ -6,13 +6,7 @@ phases:
       - apt-get update -y
       - apt-get install -y maven
     finally:
-      - echo This always runs even if the update or install command fails 
-  pre_build:
-    commands:
-      - echo Entered the pre_build phase...
-      - cd server/harvest
-    finally:
-      - echo This always runs even if the login command fails 
+      - echo This always runs even if the update or install command fails  
   build:
     commands:
       - echo Entered the build phase...
