@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on '9-10-2022'
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed Successfully
+artifacts:
+  files:
+    - target/webapp.war
+  discard-paths: yes
