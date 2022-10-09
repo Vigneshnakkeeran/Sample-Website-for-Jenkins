@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - echo Entered the install phase...
-      - apt install openjdk-11-jre-headless
+      - apt-get install openjdk-11-jdk
       - apt-get update -y
       - apt-get install -y maven
     finally:
