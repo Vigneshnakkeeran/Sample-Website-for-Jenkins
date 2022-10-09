@@ -1,10 +1,10 @@
 version: 0.2
 phases:
   install:
+    runtime-versions:
+       java: openjdk11
     commands:
       - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install -y java
       - apt-get update -y
       - apt-get install -y maven
     finally:
