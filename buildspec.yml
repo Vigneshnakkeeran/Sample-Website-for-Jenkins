@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo Build started on '9-10-2022'
-      - mvn clean package
+      - echo Build started 
+      - mvn clean install package
   post_build:
     commands:
       - echo Build completed Successfully
