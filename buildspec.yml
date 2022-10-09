@@ -4,7 +4,7 @@ phases:
     commands:
       - echo Entered the install phase...
       - apt-get update -y
-      - apt-get install -y openjdk
+      - apt-get install -y java
       - apt-get update -y
       - apt-get install -y maven
     finally:
