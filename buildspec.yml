@@ -10,7 +10,6 @@ phases:
       - echo Nothing to do in the pre_build phase
   build:
     commands:
-      - echo build started 
       - mvn clean compile test
       - mvn war:exploded
   post_build:
