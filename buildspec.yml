@@ -10,8 +10,8 @@ phases:
       - echo Nothing to do in the pre_build phase
   build:
     commands:
-      - mvn clean compile test
-      - mvn war:exploded
+      - maven clean compile test
+      - maven war:exploded
   post_build:
     commands:
       - echo build completed 
