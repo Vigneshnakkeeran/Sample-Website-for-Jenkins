@@ -1,13 +1,21 @@
 version: 0.2
 phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo Nothing to do in the install phase
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase
   build:
     commands:
-      - echo Build started on '9-10-2022'
-      - mvn clean install package
+      - echo build started 
+      - mvn install
   post_build:
     commands:
-      - echo Build completed Successfully
+      - echo build completed 
 artifacts:
   files:
-    - target/webapp.war
+    - 'target/webapp.war'
   discard-paths: yes
