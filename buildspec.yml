@@ -5,18 +5,13 @@ phases:
        java: corretto17
     commands:
       - echo Entered the install phase...
-      - yum update -y
-      - yum install maven -y
-      - mvn --version
-    finally:
-      - echo This always runs even if the update or install command fails  
+      - apt-get update -y
+      - apt-get install maven -y 
   build:
     commands:
       - echo Entered the build phase...
       - echo Build started 
       - mvn clean package 
-    finally:
-      - echo This always runs even if the install command fails
   post_build:
     commands:
       - echo Entered the post_build phase...
