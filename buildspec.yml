@@ -2,20 +2,26 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17
+       java: corretto17
     commands:
-      - echo Nothing to do in the install phase
-  pre_build:
-    commands:
-      - echo Nothing to do in the pre_build phase
+      - echo Entered the install phase...
+      - yum update -y
+      - yum install maven -y
+      - mvn --version
+    finally:
+      - echo This always runs even if the update or install command fails  
   build:
     commands:
-      - maven clean compile test
-      - maven clean pacakge
+      - echo Entered the build phase...
+      - echo Build started 
+      - mvn clean package 
+    finally:
+      - echo This always runs even if the install command fails
   post_build:
     commands:
-      - echo build completed 
+      - echo Entered the post_build phase...
+      - echo Build completed 
 artifacts:
   files:
-    - 'target/webapp.war'
+    - target/webapp.war
   discard-paths: yes
