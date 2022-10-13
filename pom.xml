@@ -166,7 +166,6 @@
 
   <dependencyManagement>
     <dependencies>
-    <build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -177,7 +176,7 @@
             </configuration>
         </plugin>
     </plugins>
-  </build>
+             
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
