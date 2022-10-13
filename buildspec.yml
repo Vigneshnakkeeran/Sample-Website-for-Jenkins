@@ -11,11 +11,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Build started 
-      - mvn clean package 
-  post_build:
-    commands:
-      - echo Entered the post_build phase...
-      - echo Build completed 
+      - mvn clean package  
 artifacts:
   files:
     - target/webapp.war
