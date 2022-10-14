@@ -10,12 +10,12 @@ phases:
   build:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-    commands:
       - echo Entered the build phase...
       - echo Build started 
       - mvn clean package
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+    commands:
       - echo Build started for Docker
       - echo Building the Docker image...          
       - docker build -t dockervicky:latest .
