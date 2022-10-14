@@ -7,7 +7,7 @@ phases:
       - echo Entered the install phase...
       - apt-get update -y
       - apt-get install maven -y 
-      - apt-get install docker.io -y
+      - apt-get install docker -y
   pre_build:
     commands:
       - echo Entered the build phase...
