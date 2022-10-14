@@ -13,7 +13,7 @@ phases:
       - echo Build started 
       - mvn clean package
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION
       - echo Build started for Docker
       - echo Building the Docker image...          
       - docker build -t dockervickytomcat:latest .
