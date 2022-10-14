@@ -7,7 +7,6 @@ phases:
       - echo Entered the install phase...
       - apt-get update -y
       - apt-get install maven -y 
-  build:
   pre_build:
     commands:
       - echo Entered the build phase...
@@ -15,7 +14,6 @@ phases:
       - mvn clean package
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-    commands:
       - echo Build started for Docker
       - echo Building the Docker image...          
       - docker build -t dockervicky:latest .
