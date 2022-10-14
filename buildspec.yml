@@ -8,7 +8,7 @@ phases:
       - apt-get update -y
       - apt-get install maven -y 
       - apt-get install docker.io -y
-      - sudo service docker start
+      - service docker start
   pre_build:
     commands:
       - echo Entered the build phase...
