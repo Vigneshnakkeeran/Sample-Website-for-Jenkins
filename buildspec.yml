@@ -14,5 +14,5 @@ phases:
       - mvn clean package  
 artifacts:
   files:
-    - target/webapp.war
+    - webapp/target/webapp.war
   discard-paths: yes
