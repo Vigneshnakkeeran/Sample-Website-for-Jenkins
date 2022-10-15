@@ -15,7 +15,7 @@ phases:
       - echo Build started 
       - mvn clean package
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login --region ap-southeast-1 --no-include-email
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION
       - echo Build started for Docker
       - echo Building the Docker image...          
       - docker build -t dockervickytomcat:latest .
