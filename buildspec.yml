@@ -14,17 +14,18 @@ phases:
       - echo Build started 
       - mvn clean package
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION 
+      - aws ecr get-login --region ap-southeast-1 --no-include-email
       - echo Build started for Docker
       - echo Building the Docker image...          
       - docker build -t dockervickytomcat:latest .
-      - docker tag dockervickytomcat:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickyrepo
+      - docker tag dockervickytomcat:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
   post_build:
     commands:
       - echo Build completed 
       - echo Pushing the Docker images...
-      - docker push 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickyrepo
+      - docker push 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
 artifacts:
   files:
+    - Dockerfile
     - webapp/target/webapp.war
   discard-paths: yes
