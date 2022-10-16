@@ -1,6 +1,6 @@
 [
   {
-    "name": "vickycontainer",
+    "name": "tomcat",
     "imageUri": "034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker"
   }
 ]
