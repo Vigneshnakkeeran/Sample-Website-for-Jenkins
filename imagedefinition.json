@@ -1,6 +1,7 @@
 [
+  {
   
-    "name": "tomcat-webserver",
+    "name": "tomcat-webserver"
     "imageUri": "034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker"
   }
 ]
