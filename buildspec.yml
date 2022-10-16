@@ -20,7 +20,7 @@ phases:
       - echo Building the Docker image...          
       - docker build -t dockervickytomcat:latest .
       - docker tag dockervickytomcat:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
-      - docker run -itd --name vickytomcat -p "8070:8080" dockervickytomcat:latest
+      - docker run -itd --name vickytom -p "8071:8080" dockervickytomcat:latest
   post_build:
     commands:
       - echo Build completed 
