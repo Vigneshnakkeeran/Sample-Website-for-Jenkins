@@ -18,8 +18,9 @@ phases:
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
       - echo Build started for Docker
       - echo Building the Docker image...          
-      - docker build -t projecttomcat:latest .
-      - docker tag projecttomcat:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
+      - docker build -t vickydocker:latest .
+      - docker tag vickydocker:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
+      - docker run -itd --name vickytomcat -p "8090:8080" vickydocker:latest
   post_build:
     commands:
       - echo Build completed 
