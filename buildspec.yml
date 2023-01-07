@@ -15,17 +15,16 @@ phases:
       - echo Build started 
       - mvn clean package
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
-      - echo Build started for Docker
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 034359045621.dkr.ecr.us-east-1.amazonaws.com/newvickyrepo
       - echo Building the Docker image...          
-      - docker build -t vickydocker:latest .
-      - docker tag vickydocker:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
-      - docker run -itd --name vickytomcat -p "8090:8080" vickydocker:latest
+      - docker build -t vickyfirsttask:latest .
+      - docker tag vickyfirsttask:latest 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
+      - docker run -itd --name vickytask -p "8080:8080" vickyfirsttask:latest
   post_build:
     commands:
       - echo Build completed 
       - echo Pushing the Docker images...
-      - docker push 034359045621.dkr.ecr.ap-southeast-1.amazonaws.com/vickydocker
+      - docker push 034359045621.dkr.ecr.us-east-1.amazonaws.com/newvickyrepo
 artifacts:
   files:
     - Dockerfile
